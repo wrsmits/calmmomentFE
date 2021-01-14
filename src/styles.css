@@ -1,1 +1,205 @@
-/* You can add global styles to this file, and also import other style files */
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  background-color: #000000;
+  font-family: "Century Gothic";
+  color: #FFFFFF;
+  height: 100%;
+}
+
+mat-card {
+  padding: 15px;
+  margin: 10px;
+  max-width: 400px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+a:link {
+  font-family: "Century Gothic";
+  color: #FFFFFF;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  font-family: "Century Gothic";
+  color: #FFFFFF;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  font-family: "Century Gothic";
+  color: #FFFFFF;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active {
+  font-family: "Century Gothic";
+  color: #FFFFFF;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  border: 2px solid #FFFFFF;
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 14px 28px;
+  width: 200px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Century Gothic";
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.btn:hover {
+  background: #666666;
+}
+
+.pointer-center {
+  cursor: pointer;
+  text-align: center;
+}
+
+/*.container {*/
+/*  display: inline-block;*/
+/*  cursor: pointer;*/
+/*}*/
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #FFFFFF;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.topleft {
+  display: block;
+  margin-right: auto;
+  margin-left: 6px;
+  width: 60%;
+  top: 8px;
+}
+
+/*Opened hamburger menu*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #333333;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-family: fut;
+  font-size: 20px;
+  color: #FFFFFF;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #999999;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px 20px;
+}
+
+.row {
+  margin: 0 0px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  padding: 16px;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid #FFFFFF;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

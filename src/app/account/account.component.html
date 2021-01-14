@@ -1,0 +1,48 @@
+<mat-drawer-container class="container">
+  <mat-drawer mode="side" class="sidenav-left" opened>
+    <!--    Categories button-->
+    <button (click)="showCategories = !showCategories" mat-button>
+      <h2>Categories</h2>
+    </button>
+    <div *ngFor="let category of categories">
+      <p *ngIf="showCategories">{{category.categoryName}}</p>
+    </div>
+    <!--    Situations button-->
+    <button (click)="showSituations = !showSituations" mat-button>
+      <h2>My Situations</h2>
+    </button>
+    <div *ngFor="let situation of situations">
+      <p *ngIf="showSituations">{{situation.situationName}}</p>
+    </div>
+    <!--    Tips button-->
+    <button (click)="showTips = !showTips" mat-button>
+      <h2>My Tips</h2>
+    </button>
+    <div *ngFor="let tip of tips">
+      <p *ngIf="showTips">{{tip.tipName}}</p>
+    </div>
+
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="categories" *ngFor="let account of accounts; index as i; first as isFirst">
+      <p>First Name: {{i}}/{{accounts.length}}. {{account}}</p>
+    </div>
+
+    <!-- Menu opens after clicking on the hamburger menu-->
+    <div id="myAccountNav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="account">Account</a>
+      <a href="general">General</a>
+      <a href="help">Help</a>
+      <a href="feedback">Feedback</a>
+      <a href="rate-us">Rate Us</a>
+    </div>
+
+    <!-- Hamburger menu -->
+    <div id="hamburgerMenu" class="topright container" onclick="openNav()">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,67 @@
+<!--<div *ngIf="selectedCategory">-->
+<!--<mat-drawer-container class="container">-->
+<!--  <mat-drawer mode="side" class="sidenav-left" opened>-->
+<!--    &lt;!&ndash;    Categories button&ndash;&gt;-->
+<!--    <button (click)="showCategories = !showCategories" mat-button>-->
+<!--      <h2>Categories</h2>-->
+<!--    </button>-->
+<!--    <div *ngFor="let category of categories">-->
+<!--      <a routerLink="/category/{{category.categoryId}}" *ngIf="showCategories">{{category.categoryName}}</a>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;    Situations button&ndash;&gt;-->
+<!--    <button (click)="showSituations = !showSituations" mat-button>-->
+<!--      <h2>My Situations</h2>-->
+<!--    </button>-->
+<!--    <div *ngFor="let situation of situations">-->
+<!--      <a routerLink="/situation/{{situation.situationId}}" *ngIf="showSituations">{{situation.situationName}}</a>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;    Tips button&ndash;&gt;-->
+<!--    <button (click)="showTips = !showTips" mat-button>-->
+<!--      <h2>My Tips</h2>-->
+<!--    </button>-->
+<!--    <div *ngFor="let tip of tips">-->
+<!--      <a routerLink="/tip/{{tip.tipId}}" *ngIf="showTips">{{tip.tipName}}</a>-->
+<!--    </div>-->
+
+<!--  </mat-drawer>-->
+<!--  <mat-drawer-content *ngIf="selectedCategory">-->
+<h2>{{selectedCategory.categoryName}}</h2>
+<h3>{{selectedCategory.categoryTitle}}</h3>
+
+<!--Create new category test-->
+<!--<button mat-raised-button (click)="categoryService.createCategory(selectedCategory)">Create Category</button>-->
+<button mat-raised-button (click)="this.createCategory(selectedCategory)">Create Category</button>
+
+<mat-card class="categories" *ngFor="let situation of selectedCategory.categorySituation">
+  <a routerLink="/situation/{{situation.situationId}}">
+    <mat-card-header>
+      <mat-card-title class="name">{{situation.situationName}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{situation.situationImage}}" alt="Image of {{situation.situationName}}">
+    <mat-card-content>
+      <p class="title">{{situation.situationTitle}}</p>
+    </mat-card-content>
+  </a>
+</mat-card>
+
+
+<!--    &lt;!&ndash; Menu opens after clicking on the hamburger menu&ndash;&gt;-->
+<!--    <div id="myAccountNav" class="sidenav">-->
+<!--      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+<!--      <a routerLink="home">Home</a>-->
+<!--      <a routerLink="account">Account</a>-->
+<!--      <a routerLink="general">General</a>-->
+<!--      <a routerLink="help">Help</a>-->
+<!--      <a routerLink="feedback">Feedback</a>-->
+<!--      <a routerLink="rate-us">Rate Us</a>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Hamburger menu &ndash;&gt;-->
+<!--    <div id="hamburgerMenu" class="topright container" onclick="openNav()">-->
+<!--      <div class="bar1"></div>-->
+<!--      <div class="bar2"></div>-->
+<!--      <div class="bar3"></div>-->
+<!--    </div>-->
+<!--  </mat-drawer-content>-->
+<!--</mat-drawer-container>-->
+<!--</div>-->

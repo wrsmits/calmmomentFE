@@ -1,0 +1,55 @@
+mat-card {
+  padding: 15px;
+  margin: 10px;
+  max-width: 400px;
+}
+
+.sidenav-left {
+  width: 300px;
+  min-height: 100vh;
+}
+
+.sidenav {
+  padding: 20px;
+}
+
+.name {
+  text-align: left;
+  font-weight: bolder;
+  font-size: 16pt;
+  font-family: "Century Gothic";
+}
+
+.title {
+  text-align: left;
+  font-weight: lighter;
+  font-size: 12pt;
+  font-family: "Century Gothic";
+}
+
+.categories {
+  display: inline-grid;
+  align-items: stretch;
+}
+
+.container {
+  width: auto;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.button-width {
+  width: 295px;
+  text-align: left;
+}
+
+.subbutton {
+  width: 295px;
+  text-align: left;
+  font-family: "Century Gothic";
+  font-size: 12pt;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,50 @@
+<!--<mat-drawer-container class="container">-->
+<!--  <mat-drawer mode="side" class="sidenav-left" opened>-->
+<!--    &lt;!&ndash;    Home button&ndash;&gt;-->
+<!--    <button mat-button routerLink="/home" class="button-width"><h2>Home</h2></button>-->
+<!--    &lt;!&ndash;    Categories button&ndash;&gt;-->
+<!--    <button (click)="showCategories = !showCategories" mat-button class="button-width">-->
+<!--      <h2>Categories</h2>-->
+<!--    </button>-->
+<!--    <div *ngFor="let category of categories">-->
+<!--      <button mat-button routerLink="/category/{{category.categoryId}}" *ngIf="showCategories" class="subbutton">{{category.categoryName}}</button>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;    Situations button&ndash;&gt;-->
+<!--    <button (click)="showSituations = !showSituations" mat-button class="button-width">-->
+<!--      <h2>My Situations</h2>-->
+<!--    </button>-->
+<!--    <div *ngFor="let situation of situations">-->
+<!--      <button mat-button routerLink="/situation/{{situation.situationId}}" *ngIf="showSituations" class="subbutton">{{situation.situationName}}</button>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;    Tips button&ndash;&gt;-->
+<!--    <button (click)="showTips = !showTips" mat-button class="button-width">-->
+<!--      <h2>My Tips</h2>-->
+<!--    </button>-->
+<!--    <div *ngFor="let tip of tips">-->
+<!--      <button mat-button routerLink="/tip/{{tip.tipId}}" *ngIf="showTips" class="subbutton">{{tip.tipName}}</button>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash;    Misc buttons&ndash;&gt;-->
+<!--    <button mat-button routerLink="/account" class="button-width"><h2>My Account</h2></button>-->
+<!--    <button mat-button routerLink="/general" class="button-width"><h2>General</h2></button>-->
+<!--    <button mat-button routerLink="/help" class="button-width"><h2>Help</h2></button>-->
+<!--    <button mat-button routerLink="/feedback" class="button-width"><h2>Feedback</h2></button>-->
+
+<!--  </mat-drawer>-->
+<!--  <mat-drawer-content *ngIf="selectedSituation">-->
+<!--    <img src="{{selectedSituation.situationImage}}">-->
+<h2>{{selectedSituation.situationName}}</h2>
+<h3>{{selectedSituation.situationTitle}}</h3>
+
+<button mat-raised-button routerLink="/questions"><h2>Go to question form</h2></button>
+<mat-list>
+  <h3 mat-subheader>Questions</h3>
+  <mat-list-item *ngFor="let question of selectedSituation.situationQuestion">
+    <mat-icon mat-list-icon>question_answer</mat-icon>
+    <div mat-line>{{question.questionName}}</div>
+    <div mat-line>{{question.questionCaption}}</div>
+  </mat-list-item>
+</mat-list>
+
+<!--  </mat-drawer-content>-->
+<!--</mat-drawer-container>-->
