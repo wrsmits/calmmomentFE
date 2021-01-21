@@ -1,3 +1,4 @@
+<!-- If selectedSituation contains info the page will load, otherwise an empty page will be shown. -->
 <div *ngIf="selectedSituation">
   <mat-list>
     <h1 mat-subheader>Questions for {{selectedSituation.situationName}}</h1>
@@ -5,6 +6,11 @@
       <mat-icon mat-list-icon>question_answer</mat-icon>
       <div mat-line>{{question.questionName}}</div>
       <div mat-line>{{question.questionCaption}}</div>
+      <!-- Based on the questionType a different kind of answer method will be shown.
+        questionType B = booleanquestion, this gives the user the opportunity to choose between Yes or No.
+        questionType MC = multiplechoice, this gives the user a dropdown menu that can handle one answer
+        questionType MA = multianswer, this gives the user a dropdown menu that can handle multiple answers
+        questionType O = openquestion, this gives the user to enter text -->
       <container-element [ngSwitch]="question.questionType">
         <mat-button-toggle-group *ngSwitchCase="'B'" name="boolQuestion">
           <mat-button-toggle value="true">Yes</mat-button-toggle>
@@ -12,12 +18,13 @@
         </mat-button-toggle-group>
         <mat-form-field *ngSwitchCase="'MC'" name="multipleChoiceQuestion">
           <mat-label>Select Answer</mat-label>
-          <mat-select [(ngModel)]="selectedValue">
-            <mat-option *ngFor="let answer of question.questionAnswer" [value]="answer">
+          <mat-select [formControl]="selectedValue">
+            <mat-option *ngFor="let answer of question.questionAnswer; let i = index" [value]="answer[i]">
               {{answer}}
             </mat-option>
           </mat-select>
         </mat-form-field>
+        K
         <mat-form-field *ngSwitchCase="'MA'" name="multipleAnswerQuestion">
           <mat-label>Select Answer(s)</mat-label>
           <mat-select [formControl]="answerCtrl" multiple>
@@ -30,9 +37,14 @@
           <mat-label>{{question.questionName}}</mat-label>
           <input matInput placeholder="Enter your answer.">
         </mat-form-field>
-        <p *ngSwitchDefault>Default</p>
+        <mat-form-field *ngSwitchDefault name="openQuestion" appearance="outline">
+          <mat-label>{{question.questionName}}</mat-label>
+          <input matInput placeholder="Enter your answer.">
+        </mat-form-field>
       </container-element>
     </mat-list-item>
   </mat-list>
 </div>
-
+<div *ngIf="!selectedSituation" class="spinner-container">
+  <mat-spinner></mat-spinner>
+</div>
